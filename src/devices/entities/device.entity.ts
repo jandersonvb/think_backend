@@ -2,7 +2,7 @@ import { User } from "../../users/entities/user.entity";
 import { Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 export class Device {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
