@@ -1,6 +1,6 @@
-import { Entity } from "typeorm";
+import { Entity , Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { User } from "../../users/entities/user.entity";
-import { Column, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+
 
 @Entity()
 export class Device {

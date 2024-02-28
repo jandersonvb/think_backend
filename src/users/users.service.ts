@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 import { Repository } from 'typeorm';
@@ -39,5 +39,16 @@ export class UsersService {
 
   remove(id: string) {
     return this.userRepository.delete({ id });
+  }
+
+  async verifyUser(email: string, password: string) {
+    const user = await this.userRepository.findOne({ where: { email } });
+    const passwordIsValid = await bcrypt.compare(password, user.password);
+
+    if (!passwordIsValid) {
+      throw new UnauthorizedException('Invalid credentials');
+    }
+
+    return user;
   }
 }

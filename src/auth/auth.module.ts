@@ -7,6 +7,7 @@ import { User } from '../users/entities/user.entity';
 import { UsersModule } from 'src/users/users.module';
 import { UsersService } from 'src/users/users.service';
 import { jwtConstants } from './contants';
+import { LocalStrategy } from './strategies/local.strategy';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { jwtConstants } from './contants';
       signOptions: { expiresIn: '24h' },
     }),
   ],
-  providers: [AuthService, UsersService],
+  providers: [AuthService, UsersService, LocalStrategy],
   controllers: [AuthController]
 })
 export class AuthModule { }
