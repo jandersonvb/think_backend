@@ -12,7 +12,6 @@ import { ConfigModule } from '@nestjs/config';
     UsersModule,
     DevicesModule,
     AuthModule,
-
   ],
   controllers: [],
   providers: [],
