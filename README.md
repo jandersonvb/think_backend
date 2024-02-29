@@ -30,6 +30,9 @@ Roda o docker
 
 ```bash
 docker compose up -d
+```
+## Rodando o projeto
 
 ```bash
 npm run start:dev
+```
