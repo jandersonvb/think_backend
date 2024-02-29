@@ -26,7 +26,7 @@ Certifique-se de ter o Node.js e o npm instalados em seu sistema antes de prosse
 
 ## Configuração
 
-Roda o docker 
+Rode o container docker 
 
 ```bash
 docker compose up -d
